@@ -1,0 +1,19 @@
+
+replicaCount: 1
+
+containerPort: 1010
+
+image:
+  repository: recommendation
+  pullPolicy: IfNotPresent
+  tag: "v1"
+
+serviceAccount:
+  create: false
+  automount: true
+  annotations: {}
+  name: "opentelemetry-demo"
+
+service:
+  type: ClusterIP
+  port: 8080

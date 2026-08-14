@@ -1,0 +1,26 @@
+
+replicaCount: 1
+
+container01:
+  containerPort: 8013
+  image:
+    repository: ghcr.io/open-feature/flagd:v0.11.1
+    pullPolicy: IfNotPresent
+
+container02:
+  containerPort: 4000
+  image:
+    repository: ghcr.io/open-telemetry/demo:1.12.0-flagdui
+    pullPolicy: IfNotPresent
+
+serviceAccount:
+  create: false
+  automount: true
+  annotations: {}
+  name: "opentelemetry-demo"
+
+service:
+  type: ClusterIP
+  port01: 8013
+  port02: 4000
+

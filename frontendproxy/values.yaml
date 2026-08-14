@@ -1,0 +1,31 @@
+
+replicaCount: 1
+
+image:
+  repository: ghcr.io/open-telemetry/demo:1.12.0-frontendproxy
+  pullPolicy: IfNotPresent
+
+containerPort: 8080
+
+serviceAccount:
+  create: false
+  automount: true
+  annotations: {}
+  name: "opentelemetry-demo"
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations: 
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/certificate-arn: 
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+  hosts:
+    - host: www.example.xyz
+ 

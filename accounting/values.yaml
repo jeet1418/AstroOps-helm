@@ -1,0 +1,12 @@
+
+replicaCount: 1
+
+image:
+  repository: ghcr.io/open-telemetry/demo:1.12.0-accountingservice
+  pullPolicy: IfNotPresent
+
+serviceAccount:
+  create: false
+  automount: true
+  annotations: {}
+  name: "opentelemetry-demo"

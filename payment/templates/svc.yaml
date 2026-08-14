@@ -1,0 +1,22 @@
+---
+# Source: opentelemetry-demo/templates/component.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: opentelemetry-demo-paymentservice
+  labels:
+    
+    opentelemetry.io/name: opentelemetry-demo-paymentservice
+    app.kubernetes.io/instance: opentelemetry-demo
+    app.kubernetes.io/component: paymentservice
+    app.kubernetes.io/name: opentelemetry-demo-paymentservice
+    app.kubernetes.io/part-of: opentelemetry-demo
+spec:
+  type: {{ .Values.service.type}}
+  ports:
+    - port: {{ .Values.service.port}}
+      name: tcp-service
+      targetPort: service
+  selector:
+    
+    opentelemetry.io/name: opentelemetry-demo-paymentservice

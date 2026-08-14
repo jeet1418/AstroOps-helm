@@ -1,0 +1,22 @@
+---
+# Source: opentelemetry-demo/templates/component.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: opentelemetry-demo-valkey
+  labels:
+    
+    opentelemetry.io/name: opentelemetry-demo-valkey
+    app.kubernetes.io/instance: opentelemetry-demo
+    app.kubernetes.io/component: valkey
+    app.kubernetes.io/name: opentelemetry-demo-valkey
+    app.kubernetes.io/part-of: opentelemetry-demo
+spec:
+  type: {{ .Values.service.type}}
+  ports:
+    - port: {{ .Values.service.port}}
+      name: valkey
+      targetPort: valkey
+  selector:
+    
+    opentelemetry.io/name: opentelemetry-demo-valkey

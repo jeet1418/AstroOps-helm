@@ -1,0 +1,18 @@
+
+replicaCount: 1
+
+containerPort: 8089
+
+image:
+  repository: ghcr.io/open-telemetry/demo:1.12.0-loadgenerator
+  pullPolicy: IfNotPresent
+
+serviceAccount:
+  create: false
+  automount: true
+  annotations: {}
+  name: "opentelemetry-demo"
+
+service:
+  type: ClusterIP
+  port: 8089
