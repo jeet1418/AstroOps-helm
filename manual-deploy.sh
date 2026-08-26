@@ -9,7 +9,7 @@ kubectl create namespace "$NAMESPACE"
 
 echo "Installing service accounts"
 
-kubectl apply -f serviceaccounts.yaml -n "$NAMESPACE"
+kubectl apply -f serviceaccount.yaml -n "$NAMESPACE"
 
 echo "Service accounts installed."
 
@@ -52,7 +52,3 @@ kubectl get svc -n "$NAMESPACE"
 
 echo "Ingress:"
 kubectl get ingress -n "$NAMESPACE"
-
-echo "Removing AstroOps files"
-
-rm -rf AstroOps-helm/
