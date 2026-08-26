@@ -19,7 +19,7 @@ service:
 
 ingress:
   enabled: true
-  className: alb
+  className: nginx
   annotations: 
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
@@ -27,5 +27,5 @@ ingress:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: "443"
   hosts:
-    - host: www.jeet1418.xyz
+    - host: www.example.xyz
  
