@@ -52,3 +52,7 @@ kubectl get svc -n "$NAMESPACE"
 
 echo "Ingress:"
 kubectl get ingress -n "$NAMESPACE"
+
+echo "Removing AstroOps files"
+
+rm -rf AstroOps-helm/
