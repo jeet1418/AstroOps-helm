@@ -13,7 +13,9 @@ kubectl apply -f serviceaccounts.yaml -n "$NAMESPACE"
 
 echo "Service accounts installed."
 
-echo "Installing Helm chart for AstroOps in namespace $NAMESPACE"
+echo "============================================================="
+echo "Deploying Helm chart for AstroOps in namespace $NAMESPACE"
+echo "============================================================="
 
 helm upgrade --install accounting ./accounting --namespace "$NAMESPACE"
 helm upgrade --install ad ./ad --namespace "$NAMESPACE"
@@ -35,10 +37,18 @@ helm upgrade --install recommendation ./recommendation --namespace "$NAMESPACE"
 helm upgrade --install shipping ./shipping --namespace "$NAMESPACE"
 helm upgrade --install valkey ./valkey --namespace "$NAMESPACE"
 
-echo "Helm chart installation completed."
+echo "============================================================="
+echo "Helm deployment completed"
+echo "============================================================="
 
-helm list --namespace "$NAMESPACE"
+echo "Helm releases:"
+helm list -n "$NAMESPACE"
 
-echo "Checking pods..."
-
+echo "Pods:"
 kubectl get pods -n "$NAMESPACE"
+
+echo "Services:"
+kubectl get svc -n "$NAMESPACE"
+
+echo "Ingress:"
+kubectl get ingress -n "$NAMESPACE"
