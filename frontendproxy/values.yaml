@@ -23,7 +23,7 @@ ingress:
   annotations: 
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/certificate-arn: 
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:831926618816:certificate/a57b5294-5215-487f-94d1-093325c54a7b
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80},{"HTTPS":443}]'
     alb.ingress.kubernetes.io/ssl-redirect: "443"
   hosts:
