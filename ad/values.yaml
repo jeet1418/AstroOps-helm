@@ -4,7 +4,7 @@ replicaCount: 1
 containerPort: 9099
 
 image:
-  repository: ad
+  repository: 831926618816.dkr.ecr.us-east-1.amazonaws.com/ad
   pullPolicy: IfNotPresent
   tag: "v1"
 

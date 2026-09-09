@@ -4,7 +4,7 @@ replicaCount: 1
 containerPort: 8080
 
 image:
-  repository: frontend
+  repository: 831926618816.dkr.ecr.us-east-1.amazonaws.com/frontend
   pullPolicy: IfNotPresent
   tag: "v1"
 

@@ -4,7 +4,7 @@ replicaCount: 1
 containerPort: 1010
 
 image:
-  repository: recommendation
+  repository: 831926618816.dkr.ecr.us-east-1.amazonaws.com/recommendation
   pullPolicy: IfNotPresent
   tag: "v1"
 

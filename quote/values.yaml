@@ -4,7 +4,7 @@ replicaCount: 1
 containerPort: 8080
 
 image:
-  repository: quote
+  repository: 831926618816.dkr.ecr.us-east-1.amazonaws.com/quote
   pullPolicy: IfNotPresent
   tag: "v1"
 
