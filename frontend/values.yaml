@@ -1,19 +1,15 @@
 
 replicaCount: 1
-
 containerPort: 8080
-
 image:
   repository: 831926618816.dkr.ecr.us-east-1.amazonaws.com/frontend
   pullPolicy: IfNotPresent
-  tag: "v1"
-
+  tag: "9d3f76b9"
 serviceAccount:
   create: false
   automount: true
   annotations: {}
   name: "opentelemetry-demo"
-
 service:
   type: ClusterIP
   port: 8080
